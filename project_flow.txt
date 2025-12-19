@@ -136,3 +136,13 @@ file upload Flow
 - summernode - text editor
 - pagination
 - admin login
+
+
+==========================================
+
+PS C:\xampp\htdocs\IT_blog> git init 
+PS C:\xampp\htdocs\IT_blog> git add .
+PS C:\xampp\htdocs\IT_blog> git commit -m "php project"
+PS C:\xampp\htdocs\IT_blog> git branch -M main
+PS C:\xampp\htdocs\IT_blog> git remote add origin https://github.com/myosumonaung/php_project.git
+PS C:\xampp\htdocs\IT_blog> git push -u origin main
