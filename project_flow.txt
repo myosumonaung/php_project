@@ -1,0 +1,138 @@
+Blog
+=====
+
+Features
+------------
+- User(reader, writer, admin)
+- Posts
+    - category
+
+
+Posts
+------
+- View Posts -> reader[no auth]
+- Create Posts -> writer[auth]
+- Public Posts -> admin[auth] (public, reject)
+
+
+User Journey
+-------------
+Reader -> Can view all Posts
+       -> detail view
+       -> filter by category
+
+Juu    -> Register
+       -> Login
+       -> Profile
+       -> my own posts (create, public, reject)
+       -> create, edit, delete, retrieve
+
+Mg Mg  -> Login
+       -> all posts <- writer's created posts
+       -> detail view
+       -> Reject (reason)
+
+
+Category [hardcode]
+    - Create, retrieve, update, delete
+
+1. DB create
+    - category
+        - id [PK, AI]
+        - name [varchar]
+
+    - users
+        - id [PK, AI]
+        - name [varchar]
+        - email [varchar, UNIQUE]
+        - password [varchar] <- hash
+        - role (write, admin) [varchar]
+
+    - posts
+        - id [PK, AI]
+        - title [varchar]
+        - content [text]
+        - author_id [FK]
+        - category_id [FK]
+        - status [created, published, rejected] -> [varchar]
+        - published_at [timestamp, NULL]
+        - created_at [timestamp]
+
+
+2. Design (Front Side)
+    - Reader
+        - All blogs posts (Home)
+        - Detail Posts
+    - Writer 
+        - Register / Login
+        - CRUD (Create, Retrieve, Update, Delter) - Blog Posts
+
+
+3. Design (Back Side)
+    - Admin 
+        - CRUD (Categories)
+        - Post list
+        - Post detail
+
+--------------------------------------------------------------------
+
+- students
+    - id [PK, AI]
+    - name [varchar] - text
+    - gender [varchar] - radio | select option
+    - address [text] - textarea
+
+- To Do
+    -
+    - Create Post by author
+    - Public / reject by admin
+    - Retrieve posts for reader
+
+- Done
+    - Auth (Register / Login)
+        - Register
+            - create form
+            - submit form
+            - save into user table
+            - duplicate email case ** to fix
+        - Login
+
+
+Flow chat
+=========
+Guest
+-> Home, Register, Login
+
+-> Home
+    -> All published posts 
+        -> Post Detail
+
+-> Register
+    -> Fill form (create author account)
+
+-> Login
+    -> Fill form [email, password] -> author Login
+
+
+File upload
+============
+Client                     /    Server
+- browers                       - local (apache / db / file storage)
+
+normal Flow                     
+- HTML form                     -> collect -> store DB
+
+file upload Flow
+- HTML form                     -> collect -> upload to file storage -> store DB
+
+
+
+
+
+
+
+- file upload
+
+- summernode - text editor
+- pagination
+- admin login
