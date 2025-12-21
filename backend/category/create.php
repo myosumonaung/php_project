@@ -59,7 +59,7 @@
                     <form action="#" method="post">
                         <div class="form-group">
                             <label for="name">Category Name</label>
-                            <input type="text" placeholder="Enter Category Name" class="form-control w-50">
+                            <input type="text" placeholder="Enter Category Name" class="form-control w-50" name="name" id="name" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Save</button>
                     </form>
